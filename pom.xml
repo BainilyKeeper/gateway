@@ -52,6 +52,11 @@
             <version>1.5.1.RELEASE</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
 
     </dependencies>
 
@@ -83,6 +88,17 @@
 
 
     <build>
+
+        <finalName>zuul-server</finalName>
+        <resources>
+            <resource>
+                <!-- 允许访问src/main/resources下的内容 -->
+                <directory>src/main/resources</directory>
+                <!-- 过滤开启 -->
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
